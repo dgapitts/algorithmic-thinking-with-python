@@ -5,7 +5,7 @@
  > Imagine you have 100 doors in a row that are all initially closed. you going to make 100 passes by each of these doors. And on the first pass, you going to visit each door in sequence and toggle it state. So that means if it's closed, it becomes open. If it's open, it becomes closed. Since all the doors are initially closed, this will result in all the doors being open after the first pass. For the second pass, you visit every second door and toggle it state. For the third pass, you visit every third door, and so on and so forth, until you only visit the 100th on the 100th pass.
 
 
-### Test-01 - 3 door problem simplified problem
+### Test-01 - 3 door problem simplified problem - outcome [True, False, False]
 
 ```
  ~/projects/algorithmic-thinking-with-python $ cat docs/100-door-problem-test-01.py
@@ -52,7 +52,7 @@ Start: [False, False, False]
 1
 ```
 
-### Test-02 - 4 door problem simplified problem
+### Test-02 - 4 door problem simplified problem - outcome  [True, False, False, True]
 
 ```
 ~/projects/algorithmic-thinking-with-python $ cat docs/100-door-problem-test-02.py
@@ -100,6 +100,49 @@ Start: [False, False, False, False]
 *** round :4
 4:4
 [True, False, False, True]
+
+*** Final outcome:
+1
+4
+```
+
+### Test-03 - 5 door problem simplified problem - outcome [True, False, False, True, False]
+
+```
+~/projects/algorithmic-thinking-with-python $ diff docs/100-door-problem-test-02.py docs/100-door-problem-test-03.py
+1c1
+< door_problem_size=4
+---
+> door_problem_size=5
+```
+...
+```
+~/projects/algorithmic-thinking-with-python $ python3 docs/100-door-problem-test-03.py
+Start: [False, False, False, False, False]
+*** round :1
+1:1
+2:1
+3:1
+4:1
+5:1
+[True, True, True, True, True]
+
+*** round :2
+2:2
+4:2
+[True, False, True, False, True]
+
+*** round :3
+3:3
+[True, False, False, False, True]
+
+*** round :4
+4:4
+[True, False, False, True, True]
+
+*** round :5
+5:5
+[True, False, False, True, False]
 
 *** Final outcome:
 1
