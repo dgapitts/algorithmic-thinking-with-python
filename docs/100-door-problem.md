@@ -148,3 +148,90 @@ Start: [False, False, False, False, False]
 1
 4
 ```
+
+Test04 - interesting ...
+
+```
+      nothing added to commit but untracked files present (use "git add" to track)
+~/projects/algorithmic-thinking-with-python $ cat docs/100-door-problem-my-solution.py
+door_problem_size=100
+door_problem_size=door_problem_size+1 ## ignoring the [0] place holder
+
+doors = [False] * door_problem_size
+
+print("Start: " + str(doors[1:]))
+for mod_n in range(1,door_problem_size):
+  #print("*** round :" + str(mod_n)) 
+  for i in range(1,door_problem_size): 
+    if ( i % mod_n == 0):
+      #print (str(i) + ":" + str(mod_n))
+      doors[i] =  not doors[i]
+  #print(doors[1:])
+  print ()
+    
+print ("*** Final outcome:")
+for i in range(1,door_problem_size):
+    ## print(doors[i])
+    if ( str(doors[i]) == 'True'):
+      print (str(i))  
+
+~/projects/algorithmic-thinking-with-python $ ./docs/100-door-problem-my-solution.py
+-bash: ./docs/100-door-problem-my-solution.py: Permission denied
+~/projects/algorithmic-thinking-with-python $ python3 docs/100-door-problem-my-solution.py
+Start: [False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False, False]
+
+...
+*** Final outcome:
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+```
+
+
+## 100-door-problem my-solution
+
+```
+~/projects/algorithmic-thinking-with-python $ cat docs/100-door-problem-my-solution.py
+door_problem_size=100
+door_problem_size=door_problem_size+1 ## ignoring the [0] place holder
+
+doors = [False] * door_problem_size
+
+##print("Start: " + str(doors[1:]))
+for mod_n in range(1,door_problem_size):
+  #print("*** round :" + str(mod_n)) 
+  for i in range(1,door_problem_size): 
+    if ( i % mod_n == 0):
+      #print (str(i) + ":" + str(mod_n))
+      doors[i] =  not doors[i]
+  #print(doors[1:])
+  ## print ()
+    
+print ("*** Final outcome:")
+for i in range(1,door_problem_size):
+    ## print(doors[i])
+    if ( str(doors[i]) == 'True'):
+      print (str(i))  
+```
+...
+```
+~/projects/algorithmic-thinking-with-python $ python3 docs/100-door-problem-my-solution.py
+*** Final outcome:
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+```
