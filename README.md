@@ -3,3 +3,4 @@
 Notes and my solutions from algorithmic-thinking-with-python course
 
 * [100 door problem](docs/100-door-problem.md)
+* [fizzbuzz - classic interview queation](docs/fizzbuzz-classic-interview-queation.md)
