@@ -195,7 +195,7 @@ Start: [False, False, False, False, False, False, False, False, False, False, Fa
 ```
 
 
-## 100-door-problem my-solution
+##  100-door-problem my-first-solution
 
 ```
 ~/projects/algorithmic-thinking-with-python $ cat docs/100-door-problem-my-solution.py
@@ -222,7 +222,7 @@ for i in range(1,door_problem_size):
 ```
 ...
 ```
-~/projects/algorithmic-thinking-with-python $ python3 docs/100-door-problem-my-solution.py
+~/projects/algorithmic-thinking-with-python $ time python3 docs/100-door-problem-my-solution.py 
 *** Final outcome:
 1
 4
@@ -234,4 +234,38 @@ for i in range(1,door_problem_size):
 64
 81
 100
+
+real	0m0.062s
+user	0m0.032s
+sys	0m0.014s
+```
+
+
+### 100-door-problem more efficient solution
+
+So this is the textbook answer from the instructor, I didnt concider the `step` param in `for i in range( start , stop , step )` which is fairly obvious and once it is pointed out, you can't not see it (but I'm still happy enought with my functional quick/first attempt)
+
+
+```
+~/projects/algorithmic-thinking-with-python-foundations-2450259 $ git checkout remotes/origin/01_02
+Previous HEAD position was cf4871c Start of video.
+HEAD is now at d88e831 Recorded successfully.
+~/projects/algorithmic-thinking-with-python-foundations-2450259 $ cat 01_01/100_doors_solution.py 
+doors = [False] * 101  # So we can start at door no. 1 We will ignore index 0.
+
+for i in range(1, 101):
+    for j in range(i, 101, i):
+        doors[j] = not doors[j]
+
+for i in range(1, 101):
+    if doors[i] is True:
+        print(i, end=", ")
+```
+
+```
+~/projects/algorithmic-thinking-with-python-foundations-2450259 $ time python3 01_01/100_doors_solution.py
+1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 
+real	0m0.141s
+user	0m0.048s
+sys	0m0.033s
 ```
